@@ -24,7 +24,7 @@
     'index.title': 'Mohammed Rehan portfolio',
     'index.h1': 'Mohammed Rehan — Data Engineering & AI/ML Student at BMSIT, Bangalore. Specialized in SQL, Python, ETL, and Machine Learning.',
     'index.hero.tagline': 'Data Architect & AI Developer, <span class="other-accent">engineering scalable data pipelines</span> and building AI-driven software.',
-    'index.about.text': 'As a <span class="other-accent">data engineer & AI developer</span>, I design systems that process, model, and analyze data to drive intelligent automation.',
+    'index.about.text': 'As a <span class="other-accent">data engineer</span> and <span class="other-accent">AI developer</span>, I design systems that process, model, and analyze data to drive intelligent automation.',
     'index.about.sub': "I am an AI/ML student at BMSIT Bangalore. Passionate about ETL workflows, SQL optimizations, distributed computing, and machine learning systems.",
     'index.cg.phrase': "Engineering data is about <span class=\"other-accent\">scalability</span>, <span class=\"other-accent\">precision</span>, and turning raw datasets into intelligence.",
     
@@ -40,7 +40,7 @@
     
     'index.contact.title': 'Contact — Mohammed Rehan',
     'index.contact.dispo1': "Vice President of Epoch Society at BMSIT. Leading student tech events, hackathons, and programming sessions.",
-    'index.contact.dispo2': "I am available for <span class=\"other-accent\">Data Engineering & AI/ML internships</span>, software development, and technical collaboration.",
+    'index.contact.dispo2': "I am available for <span class=\"other-accent\">Data Engineering</span> and <span class=\"other-accent\">AI/ML internships</span>, software development, and technical collaboration.",
     'index.proj.label': 'Preview',
     'index.detail.back': '🡼BACK',
 

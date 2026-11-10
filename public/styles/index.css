@@ -24,6 +24,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+  unicode-range: U+0020-0025, U+0027-FFFF;
 }
 
 @font-face {
