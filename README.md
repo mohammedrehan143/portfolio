@@ -44,6 +44,22 @@ A premium, interactive personal portfolio website showcasing modern web developm
 │   └── index.html         # About (info) page
 ├── works/
 │   └── index.html         # Work showcase page (contains 3D cube)
+├── src/
+│   └── components/        # Modular UI components
+│       ├── Preloader.html # Preloader and brand animation
+│       ├── Hero.html      # Hero section, canvas, and hero nav
+│       ├── Reveal.html    # Sequence reveal canvas and corners
+│       ├── About.html     # About bio, photo card, and badge
+│       ├── Projects.html  # Fluid SVG line & interactive project list
+│       ├── CircleGallery.html # Pinned circular gallery showcase
+│       ├── Roadmap.html   # Data engineering roadmap steps
+│       ├── Skills.html    # Interactive skills accordion directory
+│       ├── Awards.html    # Certifications & achievements
+│       ├── Contact.html   # Contact visual frames & direct links
+│       ├── Footer.html    # ASCII art pillars, footer nav & signature
+│       ├── ProjectDetail.html # Full-screen project drawer modal
+│       ├── ScrollIndicator.html # Progress bar & percentage counter
+│       └── index.js       # Component registry & custom elements definition
 ├── public/
 │   ├── assets/
 │   │   ├── favicon/       # Custom MR initials favicon
@@ -56,10 +72,10 @@ A premium, interactive personal portfolio website showcasing modern web developm
 │   └── styles/
 │       ├── index.css      # Core styles, variables, preloader, and overlays
 │       └── works.css      # 3D cube and Work page specific layout
-├── index.html             # Homepage
+├── index.html             # Homepage composing modular components
 ├── package.json           # Build scripts and dependencies
 ├── vercel.json            # Vercel-ready clean URLs and caching headers
-└── vite.config.js         # Multi-page Rollup bundle resolution configuration
+└── vite.config.js         # Multi-page Rollup & component resolution plugin
 ```
 
 ---
