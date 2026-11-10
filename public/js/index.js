@@ -994,22 +994,20 @@ function setupProjectsSection() {
 
   
   const linePath = document.getElementById('fluid-line');
-  const lineLen = linePath.getTotalLength();
-
-  
-  gsap.set(linePath, { strokeDasharray: lineLen, strokeDashoffset: lineLen });
-
-  
-  gsap.to(linePath, {
-    strokeDashoffset: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '#projects',
-      start: 'top 70%',
-      end: 'bottom 20%',
-      scrub: 1,
-    },
-  });
+  if (linePath && typeof linePath.getTotalLength === 'function') {
+    const lineLen = linePath.getTotalLength();
+    gsap.set(linePath, { strokeDasharray: lineLen, strokeDashoffset: lineLen });
+    gsap.to(linePath, {
+      strokeDashoffset: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#projects',
+        start: 'top 70%',
+        end: 'bottom 20%',
+        scrub: 1,
+      },
+    });
+  }
 
   
   ; (function () {
@@ -1872,37 +1870,172 @@ function setupProjectsSection() {
   const isEn = window.__I18N_LANG === 'en';
 
   const PROJECTS = {
+    'smart-ai-gateway': {
+      desc: isEn
+        ? "Provider-neutral LLM gateway and routing engine supporting intelligent fallback, token and cost telemetry, latency optimization, and automated agent evaluation pipelines."
+        : "Passerelle LLM neutre prenant en charge le routage intelligent, le basculement automatique, le suivi des coûts et de la latence, et l'évaluation continue des agents.",
+      category: 'AI & LLMOps',
+      year: '2026',
+      tags: ['Python', 'FastAPI', 'LLMOps', 'Model Routing', 'Agent Evaluation'],
+      images: ['/assets/images/projects/Covers/image.png'],
+      github: 'https://github.com/mohammedrehan143/smart-ai-gateway',
+      link: ''
+    },
+    'privax-ai': {
+      desc: isEn
+        ? "Privacy-first offline document intelligence workbench for importing, indexing, summarizing, comparing, and querying sensitive enterprise documents with source-grounded vector citations."
+        : "Environnement d'intelligence documentaire hors ligne axé sur la confidentialité pour l'indexation, la synthèse et l'analyse de documents sensibles avec citations vérifiées.",
+      category: 'Privacy AI & RAG',
+      year: '2026',
+      tags: ['Local AI', 'RAG', 'Python', 'Document Processing', 'Vector Search'],
+      images: ['/assets/images/projects/Covers/image copy.png'],
+      github: 'https://github.com/mohammedrehan143/privax-ai',
+      link: ''
+    },
+    'trippilot-ai': {
+      desc: isEn
+        ? "Autonomous AI-powered travel planning platform generating personalized multi-day itineraries, expense estimates, interactive route maps, and conversational itinerary adjustments."
+        : "Plateforme de planification de voyage propulsée par l'IA générant des itinéraires personnalisés, des prévisions budgétaires et des cartes interactives.",
+      category: 'AI Agent & Travel',
+      year: '2026',
+      tags: ['React', 'TypeScript', 'Vite', 'Supabase', 'AI Agents', 'Maps'],
+      images: ['/assets/images/projects/Covers/Screenshot (122).png'],
+      github: 'https://github.com/mohammedrehan143/Travel_planner',
+      link: 'https://travel-planner-bay-theta.vercel.app'
+    },
+    'gitpulse': {
+      desc: isEn
+        ? "GitHub engineering intelligence platform combining incremental data ingestion, developer activity analytics, four independent ML models, anomaly detection, and AI-generated sprint insights."
+        : "Plateforme d'intelligence d'ingénierie GitHub combinant ingestion incrémentielle de données, analyses de développeurs, quatre modèles ML et détection d'anomalies.",
+      category: 'Engineering Analytics',
+      year: '2026',
+      tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Machine Learning', 'Groq'],
+      images: ['/assets/images/projects/Zenith/image1.png', '/assets/images/projects/Zenith/image2.png', '/assets/images/projects/Zenith/image3.png'],
+      github: 'https://github.com/mohammedrehan143/gitpulse',
+      link: 'https://gitpulse-seven.vercel.app'
+    },
+    'retailiq': {
+      desc: isEn
+        ? "Retail intelligence platform built around a Medallion (Bronze-Silver-Gold) data lakehouse architecture. Integrates dbt data transformations, FastAPI analytic marts, sales forecasting, and multi-agent investigations."
+        : "Plateforme d'intelligence commerciale basée sur une architecture de data lakehouse médaillon (Bronze-Argent-Or) avec transformations dbt et prévisions des ventes.",
+      category: 'Data Lakehouse',
+      year: '2026',
+      tags: ['Python', 'Parquet', 'dbt', 'FastAPI', 'PostgreSQL', 'React', 'LangGraph'],
+      images: ['/assets/images/projects/skymcdb/image.png', '/assets/images/projects/skymcdb/image2.png', '/assets/images/projects/skymcdb/image3.png', '/assets/images/projects/skymcdb/image4.png'],
+      github: 'https://github.com/mohammedrehan143/Leakehouse',
+      link: ''
+    },
+    'agentpay': {
+      desc: isEn
+        ? "Agentic procurement and payment protocol where autonomous agents discover service providers, select bids, enforce enterprise budget limits, and execute verified on-chain settlements."
+        : "Protocole de passation des marchés et de paiement par agents autonomes avec conformité budgétaire et règlement cryptographique.",
+      category: 'Agentic AI & Web3',
+      year: '2026',
+      tags: ['Agentic AI', 'x402', 'Permit2', 'Monad', 'Node.js', 'Smart Contracts'],
+      images: ['/assets/images/projects/chromablock/image1.png', '/assets/images/projects/chromablock/image2.png', '/assets/images/projects/chromablock/image3.png'],
+      github: 'https://github.com/mohammedrehan143/agentpay',
+      link: 'https://agentpay-lac.vercel.app'
+    },
+    'chatsin': {
+      desc: isEn
+        ? "High-concurrency real-time messaging platform featuring robust authentication, live duplex chat, online presence tracking, typing indicators, and read receipts."
+        : "Plateforme de messagerie en temps réel haute performance avec authentification sécurisée, présence en ligne et accusés de lecture.",
+      category: 'Real-time Web',
+      year: '2026',
+      tags: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Socket.IO', 'Prisma', 'PostgreSQL'],
+      images: ['/assets/images/projects/echo/image.png'],
+      github: 'https://github.com/mohammedrehan143/chatsin',
+      link: 'https://chatsin.vercel.app'
+    },
+    'grihasahay': {
+      desc: isEn
+        ? "Multilingual rural housing assistant helping households understand welfare housing schemes, organize land ownership records, evaluate eligibility criteria, and calculate localized construction costs."
+        : "Plateforme d'assistance au logement rural multilingue pour comprendre les programmes d'aide gouvernementaux et évaluer l'éligibilité.",
+      category: 'GovTech AI',
+      year: '2026',
+      tags: ['Python', 'FastAPI', 'Groq', 'RAG', 'Supabase', 'pgvector', 'Next.js'],
+      images: ['/assets/images/projects/Anima/image1.png', '/assets/images/projects/Anima/image2.png', '/assets/images/projects/Anima/image3.png'],
+      github: 'https://github.com/mohammedrehan143/Grihasahay',
+      link: ''
+    },
+    'cipher-x': {
+      desc: isEn
+        ? "Satellite land-use change detection platform leveraging multi-temporal Sentinel-2 imagery, spectral vegetation indexing (NDVI, NDWI, NDBI), and Random Forest classification for geospatial monitoring."
+        : "Système de détection des changements d'utilisation des sols par satellite utilisant l'imagerie Sentinel-2 et des modèles de forêt aléatoire.",
+      category: 'Geospatial AI',
+      year: '2025',
+      tags: ['Python', 'Sentinel-2', 'GIS', 'Random Forest', 'Streamlit', 'Rasterio'],
+      images: ['/assets/images/projects/cyberdiag/image1.png', '/assets/images/projects/cyberdiag/image2.png', '/assets/images/projects/cyberdiag/image3.png'],
+      github: 'https://github.com/mohammedrehan143/cipher-x',
+      link: ''
+    },
+    'subguard': {
+      desc: isEn
+        ? "Subscription intelligence dashboard tracking recurring services, upcoming renewal billing cycles, spending trends, and cost-reduction opportunities."
+        : "Tableau de bord intelligent pour le suivi des abonnements récurrents, les renouvellements à venir et l'optimisation des dépenses.",
+      category: 'Fintech & AI',
+      year: '2025',
+      tags: ['Full-stack', 'AI', 'PayPal Sandbox', 'FastAPI', 'React', 'Database'],
+      images: ['/assets/images/projects/symphony/image.png', '/assets/images/projects/symphony/image2.png', '/assets/images/projects/symphony/image3.png'],
+      github: 'https://github.com/mohammedrehan143/subguard',
+      link: ''
+    },
+    'epoch-hub': {
+      desc: isEn
+        ? "Comprehensive community operations and governance platform for Epoch Society. Manages member tiers, department initiatives, task review cycles, and project leaderboards."
+        : "Plateforme d'opérations et de gestion communautaire pour Epoch Society avec suivi des tâches et classements de contribution.",
+      category: 'Community Ops',
+      year: '2025',
+      tags: ['Next.js', 'Full-stack', 'Authentication', 'Database', 'Analytics'],
+      images: ['/assets/images/projects/CyberDiagWebsite/image1.png', '/assets/images/projects/CyberDiagWebsite/image2.png', '/assets/images/projects/CyberDiagWebsite/image3.png'],
+      github: 'https://github.com/mohammedrehan143/EPOCH_HUB',
+      link: 'https://epoch-hub-pi.vercel.app'
+    },
     'yogaweb': {
       desc: isEn ? "A modern Next.js Yoga Studio Management platform featuring class scheduling, online member registrations, instructor profiles, and tailored packages for Hatha, Vinyasa, Power Yoga, and Meditation." : "Une plateforme moderne de gestion de studio de yoga sous Next.js avec planification de cours, inscriptions de membres et profils d'instructeurs.",
       category: 'Web Application', year: '2026', tags: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
       images: ['/assets/images/projects/yogaweb/image1.jpg', '/assets/images/projects/yogaweb/image2.jpg'],
+      github: 'https://github.com/mohammedrehan143/yoga_website',
       link: 'https://yogaweb-sigma.vercel.app/'
     },
     'compactweds': {
       desc: isEn ? "Premium client-facing portal for Compact Weddings, showcasing luxury photography and cinematography services. Features detailed service offerings, client testimonials, curated project galleries, and destination-wedding booking integrations." : "Site web premium pour Compact Weddings, présentant des services de photographie et de cinématographie de luxe avec galeries de projets et intégration de réservations.",
       category: 'Photography Platform', year: '2026', tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
       images: ['/assets/images/projects/compactweds/image1.jpg', '/assets/images/projects/compactweds/image2.jpg'],
+      github: 'https://github.com/mohammedrehan143/flower',
       link: 'https://compactweds.vercel.app/'
     },
     'agentathon': {
       desc: isEn ? "Official website for Agentathon 2026, a 2-day immersive workshop and hackathon presented by Epoch Society at BMSIT&M. Focused on building intelligent AI agents, automation, and real-world system applications." : "Site web officiel d'Agentathon 2026, un atelier et hackathon de 2 jours présenté par Epoch Society à BMSIT&M sur les agents d'intelligence artificielle.",
       category: 'Event Platform', year: '2026', tags: ['React', 'Tailwind CSS', 'Vite', 'Vercel'],
       images: ['/assets/images/projects/agentathon/image1.jpg', '/assets/images/projects/agentathon/image2.jpg'],
+      github: 'https://github.com/mohammedrehan143',
       link: 'https://agentathonweb.vercel.app/'
     },
     'cognitivex': {
       desc: isEn ? "Official website for CognitiveX, a 16-hour Gen AI hackathon presented by Epoch Society at BMSIT. Collaborated with IBM SkillBridge, SmartBridge, and IEEE Information Theory Society to host student innovation workshops." : "Site web officiel de CognitiveX, un hackathon Gen AI de 16 heures présenté par Epoch Society à BMSIT en collaboration avec IBM SkillBridge, SmartBridge et IEEE.",
       category: 'Event Platform', year: '2025', tags: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
       images: ['/assets/images/projects/cognitivex/image1.jpg', '/assets/images/projects/cognitivex/image2.jpg'],
+      github: 'https://github.com/mohammedrehan143',
       link: 'https://cognitive-x.vercel.app/'
     },
     'evflow': {
       desc: isEn ? "Smart EV charging station booking platform featuring real-time node maps, location-based booking restrictions (2km distance limit limit), live power telemetry, and specialized employee dashboards for deploying test nodes and changing access passkeys." : "Plateforme de réservation de recharge VE intelligente avec restrictions par emplacement (limite de 2 km), télémétrie en temps réel, tableau de bord des employés pour déployer des nœuds et changer les clés d'accès.",
       category: 'Full Stack App', year: '2025', tags: ['React', 'Node.js', 'Supabase', 'Leaflet', 'Tailwind'],
       images: ['/assets/images/projects/evflow/image1.jpg', '/assets/images/projects/evflow/image2.jpg', '/assets/images/projects/evflow/image3.jpg'],
+      github: 'https://github.com/mohammedrehan143/Vflow',
       link: 'https://evfloww.vercel.app/'
     }
   };
+
+  // Aliases for casing and alternative names
+  PROJECTS['Smart-ai-Gateway'] = PROJECTS['smart-ai-gateway'];
+  PROJECTS['PRIVAX-AI'] = PROJECTS['privax-ai'];
+  PROJECTS['Trippilot.ai'] = PROJECTS['trippilot-ai'];
+  PROJECTS['Travel_planner'] = PROJECTS['trippilot-ai'];
+  PROJECTS['leakehouse'] = PROJECTS['retailiq'];
+  PROJECTS['retailiq-lakehouse'] = PROJECTS['retailiq'];
+  PROJECTS['vflow'] = PROJECTS['evflow'];
 
   const detailEl = document.getElementById('project-detail');
   const detailTitle = document.getElementById('detail-title');
@@ -1919,6 +2052,7 @@ function setupProjectsSection() {
   const detailBack = document.getElementById('detail-back');
   const detailLinkWrap = document.getElementById('detail-link-wrap');
   const detailLinkBtn = document.getElementById('detail-link-btn');
+  const detailGithubBtn = document.getElementById('detail-github-btn');
 
   let projectOpen = false;
   window._projectOpen = false;
@@ -1959,7 +2093,12 @@ function setupProjectsSection() {
   }
 
   function openProject(id, clickedItem) {
-    const proj = PROJECTS[id];
+    let proj = PROJECTS[id];
+    if (!proj && id) {
+      const norm = id.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const key = Object.keys(PROJECTS).find(k => k && k.toLowerCase().replace(/[^a-z0-9]/g, '') === norm);
+      if (key) proj = PROJECTS[key];
+    }
     if (!proj || projectOpen) return;
     projectOpen = true; window._projectOpen = true;
     _flyingSourceItem = clickedItem;
@@ -1982,26 +2121,52 @@ function setupProjectsSection() {
     flyingTitle.style.paddingTop = cs.paddingTop;
     flyingTitle.style.paddingBottom = cs.paddingBottom;
 
-    
     gsap.set(flyingTitle, { left: rect.left, top: rect.top, opacity: 1, scale: 1, x: 0, y: 0, transformOrigin: 'left top' });
 
-    
     clickedItem.style.visibility = 'hidden';
 
-    
     detailTitle.textContent = clickedItem.textContent;
-    detailYear.textContent = proj.year;
-    detailDesc.textContent = proj.desc;
-    detailTags.innerHTML = proj.tags.map(function (t) { return '<span class="detail-tag">' + t + '</span>'; }).join('');
+    detailYear.textContent = proj.year || '';
+    detailDesc.textContent = proj.desc || '';
+    detailTags.innerHTML = (proj.tags || []).map(function (t) { return '<span class="detail-tag">' + t + '</span>'; }).join('');
     
+    let hasAnyLink = false;
     if (proj.link) {
       detailLinkBtn.href = proj.link;
+      detailLinkBtn.style.display = 'inline-block';
+      hasAnyLink = true;
+    } else {
+      detailLinkBtn.style.display = 'none';
+    }
+
+    if (detailGithubBtn) {
+      if (proj.github) {
+        detailGithubBtn.href = proj.github;
+        detailGithubBtn.style.display = 'inline-block';
+        hasAnyLink = true;
+      } else {
+        detailGithubBtn.style.display = 'none';
+      }
+    }
+
+    if (hasAnyLink) {
       detailLinkWrap.style.display = 'inline-block';
     } else {
       detailLinkWrap.style.display = 'none';
     }
     
-    var allImages = [clickedItem.dataset.img].concat(proj.images);
+    var rawImages = [clickedItem.dataset.img].concat(proj.images || []);
+    var allImages = [];
+    var seenImgs = {};
+    rawImages.forEach(function (src) {
+      if (src && !seenImgs[src]) {
+        seenImgs[src] = true;
+        allImages.push(src);
+      }
+    });
+    if (allImages.length === 0 && clickedItem.dataset.img) {
+      allImages = [clickedItem.dataset.img];
+    }
     detailThumbsInner.innerHTML = allImages.map(function (src) { return '<img src="' + src + '" alt="" decoding="async">'; }).join('');
     detailSelected.innerHTML = '<img src="' + allImages[0] + '" alt="" decoding="async">';
     detailThumbsInner.querySelectorAll('img').forEach(function (img, i) {
@@ -2016,12 +2181,11 @@ function setupProjectsSection() {
     });
     _activeThumbIdx = 0;
     _thumbImgs = [].slice.call(detailThumbsInner.querySelectorAll('img'));
-    _thumbImgs[0].classList.add('active');
+    if (_thumbImgs[0]) _thumbImgs[0].classList.add('active');
     _cachedSelImg = detailSelected.querySelector('img');
     _galleryY = 0;
     gsap.set(detailThumbsInner, { y: 0 });
 
-    
     var remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
     var targetTop = window.innerHeight * 0.22;
     var targetLeft = remPx * 4;
@@ -2029,31 +2193,18 @@ function setupProjectsSection() {
 
     var tl = gsap.timeline();
 
-    
     tl.to(pageFade, { opacity: 1, duration: 0.8, ease: 'power2.inOut' }, 0);
-
-    
     tl.to(flyingTitle, { top: targetTop, left: targetLeft, fontSize: targetFontSize, paddingTop: 0, paddingBottom: 0, duration: 1, ease: 'power3.inOut' }, 0.3);
-
-    
     tl.to(detailEl, { opacity: 1, duration: 0.4, ease: 'power2.out', onStart: function () { detailEl.classList.add('active'); } }, 1.0);
-
-    
     tl.set(flyingTitle, { opacity: 0 }, 1.1);
     tl.set(detailTitleWrap, { opacity: 1 }, 1.1);
-
-    
     tl.to(detailDesc, { opacity: 1, duration: 0.6, ease: 'power2.out' }, 1.2);
     tl.to(detailTags, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.3);
-    if (proj.link) {
+    if (hasAnyLink) {
       tl.to(detailLinkWrap, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.3);
     }
     tl.to(detailBack, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.3);
-
-    
     tl.fromTo(detailGalleryWrap, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power3.out' }, 1.2);
-
-    
     tl.add(function () {
       _galleryMaxScroll = Math.max(0, detailThumbsInner.scrollHeight - detailThumbs.clientHeight);
       _qGalleryY = gsap.quickTo(detailThumbsInner, 'y', { duration: 0.8, ease: 'power2.out' });
@@ -2075,11 +2226,9 @@ function setupProjectsSection() {
 
     var tl = gsap.timeline();
 
-    
     tl.to([detailDesc, detailTags, detailBack, detailLinkWrap], { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0);
     tl.to(detailGalleryWrap, { opacity: 0, duration: 0.4, ease: 'power2.in' }, 0);
 
-    
     var dtRect = detailTitle.getBoundingClientRect();
     var dtCs = getComputedStyle(detailTitle);
     flyingTitle.textContent = detailTitle.textContent;
@@ -2091,10 +2240,8 @@ function setupProjectsSection() {
     gsap.set(flyingTitle, { left: dtRect.left, top: dtRect.top, opacity: 1, x: 0, y: 0 });
     gsap.set(detailTitleWrap, { opacity: 0 });
 
-    
     tl.to(detailEl, { opacity: 0, duration: 0.4, ease: 'power2.in' }, 0.2);
 
-    
     if (_flyingSourceItem) {
       var itemRect = _flyingSourceItem.getBoundingClientRect();
       var itemCs = getComputedStyle(_flyingSourceItem);
@@ -2109,14 +2256,14 @@ function setupProjectsSection() {
       }, 0.3);
     }
 
-    
     tl.to(pageFade, { opacity: 0, duration: 0.6, ease: 'power2.out' }, 0.5);
 
-    
     tl.add(function () {
       detailEl.classList.remove('active');
       gsap.set([detailTitleWrap, detailDesc, detailTags, detailBack, detailGalleryWrap], { opacity: 0 });
       gsap.set(flyingTitle, { opacity: 0 });
+      if (detailGithubBtn) detailGithubBtn.style.display = 'none';
+      if (detailLinkBtn) detailLinkBtn.style.display = 'none';
       _activeThumbIdx = -1;
       _thumbImgs = [];
       _cachedSelImg = null;
@@ -2165,8 +2312,8 @@ function setupProjectsSection() {
     items.forEach(function (item) { if (item.dataset.img) allSrcs.push(item.dataset.img); });
     
     Object.keys(PROJECTS).forEach(function (id) {
-      var imgs = PROJECTS[id].images;
-      if (imgs) allSrcs = allSrcs.concat(imgs);
+      var p = PROJECTS[id];
+      if (p && p.images && Array.isArray(p.images)) allSrcs = allSrcs.concat(p.images);
     });
     
     var seen = {};

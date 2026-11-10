@@ -3,6 +3,105 @@
     var isEn = window.__I18N_LANG === 'en';
 
     var PROJECTS = [
+      {
+        id: 'smart-ai-gateway',
+        title: 'Smart AI Gateway',
+        desc: isEn ? "Provider-neutral LLM gateway and routing engine supporting intelligent fallback, token and cost telemetry, latency optimization, and automated agent evaluation pipelines." : "Passerelle LLM neutre prenant en charge le routage intelligent, le basculement automatique et l'évaluation continue des agents.",
+        category: 'AI & LLMOps',
+        year: '2026',
+        tags: ['Python', 'FastAPI', 'LLMOps', 'Model Routing', 'Groq'],
+        cover: '/assets/images/projects/Covers/image.png'
+      },
+      {
+        id: 'privax-ai',
+        title: 'PRIVAX AI',
+        desc: isEn ? "Privacy-first offline document intelligence workbench for importing, indexing, summarizing, comparing, and querying sensitive enterprise documents with source-grounded vector citations." : "Environnement d'intelligence documentaire hors ligne axé sur la confidentialité pour l'indexation et l'analyse de documents sensibles.",
+        category: 'Privacy AI & RAG',
+        year: '2026',
+        tags: ['Local AI', 'RAG', 'Python', 'Vector Search', 'NLP'],
+        cover: '/assets/images/projects/Covers/image copy.png'
+      },
+      {
+        id: 'trippilot-ai',
+        title: 'TripPilot AI',
+        desc: isEn ? "Autonomous AI-powered travel planning platform generating personalized multi-day itineraries, expense estimates, interactive route maps, and conversational adjustments." : "Plateforme de planification de voyage propulsée par l'IA générant des itinéraires personnalisés et des cartes interactives.",
+        category: 'AI Agent & Travel',
+        year: '2026',
+        tags: ['React', 'TypeScript', 'Vite', 'Supabase', 'Maps'],
+        cover: '/assets/images/projects/Covers/Screenshot (122).png'
+      },
+      {
+        id: 'gitpulse',
+        title: 'GitPulse',
+        desc: isEn ? "GitHub engineering intelligence platform combining incremental data ingestion, developer activity analytics, four independent ML models, and anomaly detection." : "Plateforme d'intelligence d'ingénierie GitHub combinant ingestion incrémentielle, analyses de développeurs et modèles ML.",
+        category: 'Engineering Analytics',
+        year: '2026',
+        tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Machine Learning'],
+        cover: '/assets/images/projects/Covers/Zenith.avif'
+      },
+      {
+        id: 'retailiq',
+        title: 'RetailIQ Lakehouse',
+        desc: isEn ? "Retail intelligence platform built around a Medallion (Bronze-Silver-Gold) data lakehouse architecture with dbt transformations, sales forecasting, and multi-agent investigations." : "Plateforme d'intelligence commerciale basée sur une architecture de data lakehouse médaillon.",
+        category: 'Data Lakehouse',
+        year: '2026',
+        tags: ['Python', 'Parquet', 'dbt', 'FastAPI', 'PostgreSQL', 'LangGraph'],
+        cover: '/assets/images/projects/Covers/SkymcDB.avif'
+      },
+      {
+        id: 'agentpay',
+        title: 'AgentPay',
+        desc: isEn ? "Agentic procurement and payment protocol where autonomous agents discover service providers, select bids, enforce enterprise budget limits, and execute verified on-chain settlements." : "Protocole de passation des marchés et de paiement par agents autonomes avec conformité budgétaire.",
+        category: 'Agentic AI & Web3',
+        year: '2026',
+        tags: ['Agentic AI', 'x402', 'Permit2', 'Monad', 'Node.js'],
+        cover: '/assets/images/projects/Covers/ChromaBlock.avif'
+      },
+      {
+        id: 'chatsin',
+        title: 'ChatsIn',
+        desc: isEn ? "High-concurrency real-time messaging platform featuring robust authentication, live duplex chat, online presence tracking, typing indicators, and read receipts." : "Plateforme de messagerie en temps réel haute performance avec authentification sécurisée.",
+        category: 'Real-time Web',
+        year: '2026',
+        tags: ['Next.js', 'TypeScript', 'Node.js', 'Socket.IO', 'Prisma'],
+        cover: '/assets/images/projects/Covers/Echo.avif'
+      },
+      {
+        id: 'grihasahay',
+        title: 'GrihaSahay AI',
+        desc: isEn ? "Multilingual rural housing assistant helping households navigate welfare housing schemes, organize land ownership records, evaluate eligibility criteria, and calculate localized construction costs." : "Plateforme d'assistance au logement rural multilingue pour comprendre les programmes d'aide gouvernementaux.",
+        category: 'GovTech AI',
+        year: '2026',
+        tags: ['Python', 'FastAPI', 'Groq', 'RAG', 'Supabase', 'pgvector'],
+        cover: '/assets/images/projects/Covers/Anima.avif'
+      },
+      {
+        id: 'cipher-x',
+        title: 'CIPHER-X',
+        desc: isEn ? "Satellite land-use change detection platform leveraging multi-temporal Sentinel-2 imagery, spectral vegetation indexing (NDVI, NDWI, NDBI), and Random Forest classification." : "Système de détection des changements d'utilisation des sols par satellite utilisant l'imagerie Sentinel-2.",
+        category: 'Geospatial AI',
+        year: '2025',
+        tags: ['Python', 'Sentinel-2', 'GIS', 'Random Forest', 'Streamlit'],
+        cover: '/assets/images/projects/Covers/CyberDiag.avif'
+      },
+      {
+        id: 'subguard',
+        title: 'SubGuard AI',
+        desc: isEn ? "Subscription intelligence dashboard tracking recurring services, upcoming renewal billing cycles, spending trends, and cost-reduction opportunities." : "Tableau de bord intelligent pour le suivi des abonnements récurrents et l'optimisation des dépenses.",
+        category: 'Fintech & AI',
+        year: '2025',
+        tags: ['Full-stack', 'AI', 'PayPal Sandbox', 'FastAPI', 'React'],
+        cover: '/assets/images/projects/Covers/Symphony.avif'
+      },
+      {
+        id: 'epoch-hub',
+        title: 'Epoch Hub',
+        desc: isEn ? "Comprehensive community operations and governance platform for Epoch Society. Manages member tiers, department initiatives, task review cycles, and project leaderboards." : "Plateforme d'opérations et de gestion communautaire pour Epoch Society avec suivi des tâches.",
+        category: 'Community Ops',
+        year: '2025',
+        tags: ['Next.js', 'Full-stack', 'Authentication', 'Database', 'Analytics'],
+        cover: '/assets/images/projects/Covers/cyberDiag_web.avif'
+      },
       { 
         id: 'yogaweb', 
         title: 'YogaWeb', 

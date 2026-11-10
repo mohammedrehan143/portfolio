@@ -656,9 +656,24 @@ a.chr-hover {
 }
 
 
+portfolio-about,
+portfolio-projects,
+portfolio-hero,
+portfolio-reveal,
+portfolio-circle-gallery,
+portfolio-roadmap,
+portfolio-skills,
+portfolio-awards,
+portfolio-contact,
+portfolio-footer,
+portfolio-preloader,
+portfolio-project-detail {
+  display: block;
+}
+
 .projects {
   position: relative;
-  padding: 20vh 0;
+  padding: 10vh 0 20vh;
   min-height: 100vh;
   z-index: 20010;
 }
@@ -671,14 +686,14 @@ a.chr-hover {
 }
 
 .projects-list {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  position: relative;
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding-left: 12vw;
+  padding-top: 15vh;
+  padding-bottom: 25vh;
   gap: 0;
   z-index: 10;
 }
