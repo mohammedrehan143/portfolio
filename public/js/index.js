@@ -790,7 +790,7 @@ function setupAboutSection() {
       },
     });
     
-    tl.fromTo(photo, { y: '-50%' }, { y: '50%', ease: 'none' }, 0);
+    tl.fromTo(photo, { y: '-4%' }, { y: '4%', ease: 'none' }, 0);
     
     tl.fromTo(photo, { opacity: 0, filter: 'blur(20px)' }, { opacity: 1, filter: 'blur(0px)', ease: 'none', duration: 0.3 }, 0);
   }

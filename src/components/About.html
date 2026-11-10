@@ -1,20 +1,52 @@
-<!-- Component: About Section with Profile Photo and Bio -->
+<!-- Component: About Section with Natural Black-Blend Portrait and Side-by-Side Story -->
 <div class="about" id="about">
-  <div class="about-text" id="about-text" data-i18n="index.about.text">
-    As a <span class="other-accent">data engineer & AI developer</span>, I design systems that process, model, and analyze data to drive intelligent automation.
-  </div>
-  <div class="about-sub" id="about-sub" data-i18n="index.about.sub">
-    I am a Computer Science student specializing in AI & Machine Learning at BMSIT Bangalore. Passionate about ETL pipelines, distributed data systems, and cloud architectures.
-  </div>
-  <div class="about-btn">
-    <a class="chr-hover" data-chr="Info" href="info/" data-page-link="info" aria-label="Learn more about me"></a>
-  </div>
-  <div class="about-version">
-    <svg style="width: 1.25em; height: 1.25em; vertical-align: -0.25em;" viewBox="0 0 84 85" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11 38H54L37 21H51L73 43L51 65H37L54 48H11Z"/>
-    </svg>B.E. AIML
-  </div>
-  <div class="about-photo-wrap" id="about-photo-wrap">
-    <img class="about-photo" src="/assets/images/profile/me.jpg" alt="Mohammed Rehan" decoding="async" width="2500" height="3001">
+  <div class="about-grid">
+    <!-- Left Column: Portrait emerging naturally from the black background -->
+    <div class="about-photo-wrap" id="about-photo-wrap">
+      <div class="about-photo-ambient"></div>
+      <img class="about-photo" src="/assets/images/profile/me.jpg" alt="Mohammed Rehan" decoding="async" width="1204" height="1306">
+    </div>
+
+    <!-- Right Column: Rich attractive narrative beside the photo -->
+    <div class="about-content">
+      <div class="about-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-label">Data Architecture & AI Systems</span>
+      </div>
+
+      <div class="about-text" id="about-text" data-i18n="index.about.text">
+        As a <span class="other-accent">data engineer & AI developer</span>, I design systems that process, model, and analyze data to drive intelligent automation.
+      </div>
+
+      <div class="about-sub" id="about-sub" data-i18n="index.about.sub">
+        I am a Computer Science student specializing in AI & Machine Learning at BMSIT Bangalore. Passionate about ETL pipelines, distributed computing, database architecture, and building production-ready machine learning solutions.
+      </div>
+
+      <div class="about-metrics">
+        <div class="metric-card">
+          <span class="metric-val">4+</span>
+          <span class="metric-lbl">Core Platforms</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">VP</span>
+          <span class="metric-lbl">Epoch Society</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-val">AIML</span>
+          <span class="metric-lbl">B.E. Specialized</span>
+        </div>
+      </div>
+
+      <div class="about-footer-row">
+        <div class="about-btn">
+          <a class="chr-hover" data-chr="Detailed Background 🡲" href="info/" data-page-link="info" aria-label="Learn more about me"></a>
+        </div>
+        <div class="about-version">
+          <svg style="width: 1.25em; height: 1.25em; vertical-align: -0.25em;" viewBox="0 0 84 85" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 38H54L37 21H51L73 43L51 65H37L54 48H11Z"/>
+          </svg>B.E. AIML — Bangalore, India
+        </div>
+      </div>
+    </div>
   </div>
 </div>
